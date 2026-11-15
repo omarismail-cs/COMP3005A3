@@ -3,8 +3,8 @@ import psycopg2
 from psycopg2 import Error
 
 
+# Connects to school_db. The password comes from DB_PASSWORD so it is not saved in this file.
 def get_connection():
-    # Password stays in the environment so it is not saved in this file.
     return psycopg2.connect(
         host=os.environ.get("DB_HOST", "localhost"),
         port=os.environ.get("DB_PORT", "5432"),
@@ -14,6 +14,7 @@ def get_connection():
     )
 
 
+# Reads every student and prints the rows, ordered by student_id.
 def getAllStudents():
     conn = None
     try:
@@ -48,6 +49,8 @@ def getAllStudents():
             conn.close()
 
 
+# Inserts one student and prints the new student_id.
+# The %s placeholders are filled from the values tuple, not by joining text into the SQL.
 def addStudent(first_name, last_name, email, enrollment_date):
     conn = None
     try:
@@ -77,6 +80,7 @@ def addStudent(first_name, last_name, email, enrollment_date):
             conn.close()
 
 
+# Sets a new email for one student_id. If that id is missing, nothing is changed.
 def updateStudentEmail(student_id, new_email):
     conn = None
     try:
@@ -105,6 +109,7 @@ def updateStudentEmail(student_id, new_email):
             conn.close()
 
 
+# Deletes the student with this student_id. If that id is missing, nothing is changed.
 def deleteStudent(student_id):
     conn = None
     try:
@@ -133,6 +138,7 @@ def deleteStudent(student_id):
             conn.close()
 
 
+# Asks for a menu choice and calls one function. Repeats until the user exits.
 def main():
     while True:
         print()

@@ -1,3 +1,6 @@
+-- Rebuilds the students table and loads John, Jane, and Jim.
+-- student_id is filled in automatically. email cannot repeat.
+
 DROP TABLE IF EXISTS students;
 
 CREATE TABLE students (

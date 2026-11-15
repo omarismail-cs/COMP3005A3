@@ -23,7 +23,7 @@ A Python CLI application that connects to a PostgreSQL database to perform Creat
    ```bash
    pip install -r requirements.txt
    ```
-2. Set your PostgreSQL credentials as environment variables (or update `DB_CONFIG` in `app/main.py`):
+2. Set your PostgreSQL credentials as environment variables (or edit the defaults in `get_connection()` in `app/main.py`):
    ```bash
    export DB_NAME=school_db
    export DB_USER=postgres
