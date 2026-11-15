@@ -3,7 +3,7 @@
 A Python CLI application that connects to a PostgreSQL database to perform Create, Read, Update, and Delete (CRUD) operations on a `students` table.
 
 ## Video Demonstration
-[Watch the Demo Video Here](YOUR_VIDEO_LINK_HERE)
+[Watch the Demo Video Here](https://youtu.be/UPHyk3TGE6k)
 
 ## Project Structure
 - `db/schema.sql`: SQL script to create the `students` table and insert initial records.
